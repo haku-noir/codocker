@@ -1,0 +1,14 @@
+version: "3"
+services:
+  codocker:
+    build: "./"
+    container_name: "codocker"
+    ports:
+      - "8443:8443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "<project_path>:/root/project"
+    working_dir: "/root/project"
+    environment:
+      - "PASSWORD=<password>"
+      - "PROJECT_PATH=<project_path>"
