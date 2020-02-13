@@ -3,7 +3,16 @@ Remote development environment
 
 # How to use
 ```
-docker pull hakunoir/codocker
-docker run --name codocker --publish 8443:8443 --volume /var/run/docker.sock:/var/run/docker.sock --volume <project_path>:/root/project --env PASSWORD="<password>" --env PROJECT_PATH="<project_path>" hakunoir/codocker
+git clone https://github.com/haku-noir/codocker.git
+cd codocker
 ```
+
+Edit docker-compose.yml
+- <project_path>
+- \<password\>
+
+```
+docker-compose up -d
+```
+
 Open http://localhost:8443
